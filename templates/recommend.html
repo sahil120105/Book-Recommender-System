@@ -8,51 +8,49 @@
 </head>
 
 <style>
-    .text-white{
-        color:white
+    .text-white {
+        color: white;
     }
 </style>
 
-<body style="background-color:black">
+<body style="background-color: #1e1e2f; color: #ffffff;">
 
-    <nav class="navbar" style="background-color:#00a65a">
-        <a class="navbar-brand">My Book Recommender</a>
-        <ul class="nav navbar-nav">
-            <li><a href="/">Home</a></li>
-            <li><a href="/recommend">Recommend</a></li>
-            <li><a>Contact</a></li>
-        </ul>
+    <nav class="navbar navbar-inverse" style="background-color: #ff6f61;">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" style="color: #ffffff;">My Book Recommender</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="/" style="color: #ffffff;">Home</a></li>
+                <li><a href="/recommend" style="color: #ffffff;">Recommend</a></li>
+                <li><a style="color: #ffffff;">Contact</a></li>
+            </ul>
+        </div>
     </nav>
 
     <div class="container">
         <div class="row">
-
             <div class="col-md-12">
-                <h1 class="text-white" style="font-size:50px">Recommend Books</h1>
+                <h1 style="font-size:50px; color: #ffd700;">Recommend Books</h1>
                 <form action="/recommend_books" method="post">
-                    <input type="text" name="user_input" class="form-control"><br>
-                    <input type="submit" class="btn btn-lg btn-warning">
+                    <input type="text" name="user_input" class="form-control" style="border-radius: 4px; margin-bottom: 15px;">
+                    <input type="submit" class="btn btn-lg" style="background-color: #ff6f61; color: #ffffff;">
                 </form>
             </div>
 
             {% if data %}
                 {% for i in data %}
-                <div class="col-md-3" style="margin-top:50px">
-                    <div class="card">
+                <div class="col-md-3" style="margin-top: 50px;">
+                    <div class="card text-center" style="background-color: #292b2c; padding: 20px; border-radius: 8px;">
                         <div class="card-body">
-                            <img class="card-img-top" src="{{i[2]}}">
-                            <h3 class="text-white">{{i[0]}}</h3>
-                            <p class="text-white">{{i[1]}}</p>
+                            <img class="card-img-top img-responsive center-block" src="{{i[2]}}" style="border-radius: 5px;">
+                            <h3 style="color: #ffd700;">{{i[0]}}</h3>
+                            <p style="color: #adb5bd;">{{i[1]}}</p>
                         </div>
                     </div>
                 </div>
                 {% endfor %}
-                
             {% endif %}
-            
-            
-
-
         </div>
     </div>
 
